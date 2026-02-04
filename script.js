@@ -43,3 +43,41 @@ const b = [3, 4];
 
 const c = [...a, ...b];
 console.log(c); // [1, 2, 3, 4]
+
+
+
+
+
+
+// Map & Filter (they create a new array)
+/*
+map (transform) → same number of elements, but transformed
+filter (select) → fewer (or equal) elements, but selected
+*/
+
+const myArrayTwo = ['Jose', 'Miguel', 'Antonio', 'Diego'];
+
+const nameLengths = myArrayTwo.map(name => name.length);
+console.log('The array content lengths are:', nameLengths);
+
+const longestNames = myArrayTwo.filter(name => name.length > 5);
+console.log('The longest names with more than 5 characters are:', longestNames);
+
+// forEach
+// Used for side effects (logging, DOM, etc.)
+myArrayTwo.forEach(name => console.log(name));
+
+// Adding space to each element (creating a new array)
+const spacedArray = myArrayTwo.map(name => name + ' ');
+console.log('MyArrayTwo with spaces:', spacedArray);
+
+// Adding space to each element (in the original array, it only gonna work on let tipe variable, not in const)
+// myArrayTwo = myArrayTwo.map(name => `${name} `);
+
+
+// Deconstructin arrays
+// The first 2 were ignorated, The 4 (Josuelo) doesnt exist on the array so it can take any value
+const [, , Antonele, Diegue,  Josuelo = 'Josuelin'] = myArrayTwo;
+
+console.log(`My Last Array Two ${Antonele}, ${Diegue}, ${Josuelo}`);
+
