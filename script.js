@@ -1,3 +1,16 @@
+// Importamos ambas funciones desde functions.js
+import { sumatoriaExportable, restaExportable } from "./functions.js";
+
+// Llamamos a las funciones con los valores 350 y 500
+const myNewSuma = sumatoriaExportable(350, 500);
+const myNewResta = restaExportable(350, 500);
+
+// Mostramos los resultados con alert
+alert(`La suma da ${myNewSuma}`);
+alert(`La resta da ${myNewResta}`);
+
+
+
 const myCollection = {
   nombre : 'Jose',
   age : 32
