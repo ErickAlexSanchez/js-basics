@@ -126,7 +126,7 @@ alert(myDemoArrowFunct(100,200));
 const url = 'https://jsonplaceholder.typicode.com/comments';
 
 // Conecciones sincronas (hasta que se conecta ejecuta lo demás)
-function myAPIconnection() {
+function myAPIconnection(url) {
   fetch(url)
   .then((response) => {
     if(response.ok) {
@@ -138,13 +138,13 @@ function myAPIconnection() {
   .catch(error => console.log(error.message))
 }
 
-myAPIconnection();
+myAPIconnection(url);
 
 
 
 // Conecciones asincronas (continua ejecución del resto del código mientras espera resultado)
 
-const myAsyncAPIConnection = async () => {
+const myAsyncAPIConnection = async (url) => {
 try {
   const response = await fetch(url) 
   if (!response.ok) {
@@ -160,7 +160,7 @@ try {
 
 }
 
-myAsyncAPIConnection();
+myAsyncAPIConnection(url);
 
 
 
@@ -170,7 +170,7 @@ const url2 = "https://jsonplaceholder.typicode.com/todos";
 const url3 = "https://jsonplaceholder.typicode.com/users";
 
 
-const multyAPIAsyncReques = async () => {
+const multyAPIAsyncReques = async (url1, url2, url3) => {
   try {
     const inicioPerformance = performance.now();
 
@@ -191,7 +191,7 @@ const multyAPIAsyncReques = async () => {
 }
 
 
-multyAPIAsyncReques()
+multyAPIAsyncReques(url1, url2, url3);
 
 
 
