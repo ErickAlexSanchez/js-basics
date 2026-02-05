@@ -1,5 +1,5 @@
 // Importamos ambas funciones desde functions.js
-import { sumatoriaExportable, restaExportable } from "./functions.js";
+import { sumatoriaExportable, restaExportable  } from "./functions.js";
 
 // Llamamos a las funciones con los valores 350 y 500
 const myNewSuma = sumatoriaExportable(350, 500);
@@ -106,3 +106,58 @@ const myDemoArrowFunct = (a, b) => a + b;
 
 alert(demoFunciton(10,20));
 alert(myDemoArrowFunct(100,200));
+
+
+
+
+
+
+
+
+
+
+
+
+
+// API conections
+
+
+// 1 URL definition
+const url = 'https://jsonplaceholder.typicode.com/comments';
+
+// Conecciones sincronas (hasta que se conecta ejecuta lo demás)
+function myAPIconnection() {
+  fetch(url)
+  .then((response) => {
+    if(response.ok) {
+      return response.json()
+    }
+    throw new Error("No se pudo conectar con la API");
+  })
+  .then(data => console.log(data))
+  .catch(error => console.log(error.message))
+}
+
+myAPIconnection();
+
+
+
+// Conecciones asincronas (continua ejecución del resto del código mientras espera resultado)
+
+const myAsyncAPIConnection = async () => {
+try {
+  const response = await fetch(url) 
+  if (!response.ok) {
+    throw new Error("Error en conexión con API");
+    
+  }
+  const data = await response.json()
+  console.log(data)
+} catch (error) {
+  console.log(error.message)
+}
+
+
+}
+
+myAsyncAPIConnection();
