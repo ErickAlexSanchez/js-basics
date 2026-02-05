@@ -161,3 +161,51 @@ try {
 }
 
 myAsyncAPIConnection();
+
+
+
+// Consulta simultanea de múltiples API's de forma asincrona
+const url1 = "https://jsonplaceholder.typicode.com/comments";
+const url2 = "https://jsonplaceholder.typicode.com/todos";
+const url3 = "https://jsonplaceholder.typicode.com/users";
+
+
+const multyAPIAsyncReques = async () => {
+  try {
+    const inicioPerformance = performance.now();
+
+
+    const [response1, response2, response3] = await Promise.all([fetch(url1), fetch(url2), fetch(url3)]);
+
+    const [data1, data2, data3] = await Promise.all([response1.json(), response2.json(), response3.json()]);
+
+    console.log(data1);
+    console.log(data2);
+    console.log(data3);
+
+    const finPerformance = performance.now();
+    console.log(`Performance es: ${finPerformance - inicioPerformance}`);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+
+multyAPIAsyncReques()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
