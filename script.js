@@ -196,6 +196,28 @@ multyAPIAsyncReques()
 
 
 
+// Clases 
+class MyTemplate {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  sayHi() {
+    return `Hi ${this.name}`;
+  }
+}
+
+const userOne = new MyTemplate('Rick', 32);
+
+alert(userOne.sayHi());
+
+
+// DOM
+const btn = document.querySelector(".btn");
+
+btn.addEventListener('click', () =>{
+  alert(userOne.name);
+})
 
 
 
