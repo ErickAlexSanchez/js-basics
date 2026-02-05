@@ -81,3 +81,15 @@ const [, , Antonele, Diegue,  Josuelo = 'Josuelin'] = myArrayTwo;
 
 console.log(`My Last Array Two ${Antonele}, ${Diegue}, ${Josuelo}`);
 
+
+// Traditional function
+function demoFunciton (firstParam, secondParam) {
+    return(firstParam + secondParam);
+}
+
+// Arrow function
+const myDemoArrowFunct = (a, b) => a + b;
+
+
+alert(demoFunciton(10,20));
+alert(myDemoArrowFunct(100,200));
