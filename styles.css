@@ -1,0 +1,12 @@
+body{
+    max-width: 100%;    
+    background-color: #0f0f0f;
+    color: #f1f1f1;
+}
+
+
+#myFirstForm {
+    display: flex;
+    flex-direction: column;
+}
+

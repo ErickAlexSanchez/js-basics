@@ -215,18 +215,51 @@ alert(userOne.sayHi());
 // DOM
 const btn = document.querySelector(".btn");
 
+// click is the event
 btn.addEventListener('click', () =>{
   alert(userOne.name);
 })
 
 
 
+// double click is the event:
+const btn2 = document.querySelector('#btn-2');
+
+btn2.addEventListener('dblclick', () =>{
+  alert('u make a double click');
+});
 
 
+// DOM eventos en input
+// registering all keywords in the input
+// input event is executed each time the input value changes
+const name = document.querySelector('#name');
+name.addEventListener('input', (e) => {
+  console.log(e.target.value);
+});
 
 
+const password = document.querySelector('#password')
+// DOM eventos en submit en form y agregando elementos al DOM
+const form = document.querySelector('#myFirstForm');
+
+// Creando el elemento
+const formAlert = document.createElement('DIV');
+// Agregando clases al elemento
+formAlert.classList.add('alert', 'uppercase');
 
 
+form.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  if (name.value === '' || password.value ==='') {
+        formAlert.textContent = 'Completa todos los campos';
+  } else {
+          formAlert.textContent = `Enviando ${name.vale} and ${password.value}`;
+  }
+
+    // Agregando el elemento al DOM
+  form.appendChild(formAlert);
+})
 
 
 
