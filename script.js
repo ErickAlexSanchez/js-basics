@@ -254,7 +254,7 @@ form.addEventListener('submit', (e)=>{
   if (name.value === '' || password.value ==='') {
         formAlert.textContent = 'Completa todos los campos';
   } else {
-          formAlert.textContent = `Enviando ${name.vale} and ${password.value}`;
+          formAlert.textContent = `Enviando ${name.value} and ${password.value}`;
   }
 
     // Agregando el elemento al DOM
